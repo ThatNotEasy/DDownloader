@@ -18,6 +18,8 @@ class DOWNLOADER:
         self.headers = []
         self.binary_path = None
         self.auto_select = False
+        self.save_dir = "downloads"
+        self.temp_dir = "downloads"                                
 
 # =========================================================================================================== #
 
@@ -80,8 +82,8 @@ class DOWNLOADER:
             f'"{self.manifest_url}"',
             '-mt',
             '-M', 'format=mp4',
-            '--save-dir', '"downloads"',
-            '--tmp-dir', '"downloads"',
+            '--save-dir', f'"{self.save_dir}"',
+            '--tmp-dir', f'"{self.temp_dir}"',
             '--del-after-done',
             '--decryption-engine', '"FFMPEG"',
             '--decryption-binary-path', f'"{self._get_binary_path("ffmpeg")}"',
